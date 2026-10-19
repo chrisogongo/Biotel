@@ -19,18 +19,17 @@ export function Layout({ children }: LayoutProps) {
       {/* Top Bar */}
       <div className="bg-primary-dark text-white py-2 text-sm hidden md:block">
         <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
-          <div className="flex items-center gap-6">
-            <a href="tel:+254711371092" className="flex items-center gap-1 hover:text-accent transition-colors">
-              <Phone size={14} /> +254 711 371092
-            </a>
-            <a href="mailto:info@bioteldna.co.ke" className="flex items-center gap-1 hover:text-accent transition-colors">
-              <Mail size={14} /> info@bioteldna.co.ke
-            </a>
-          </div>
-          <div className="flex items-center gap-1">
-            <Clock size={14} /> Mon - Sat: 8:00 AM - 6:00 PM
-          </div>
-        </div>
+            <div className="flex items-center gap-6">
+              <a href="tel:+254711371092" className="flex items-center gap-1 hover:text-accent transition-colors">
+                <Phone size={14} /> +254 711 371092
+              </a>
+              <a href="mailto:dna@bioteldna.co.ke" className="flex items-center gap-1 hover:text-accent transition-colors">
+                <Mail size={14} /> dna@bioteldna.co.ke
+              </a>
+            </div>
+            <div className="flex items-center gap-1">
+              <Clock size={14} /> 24 Hours Service
+            </div>        </div>
       </div>
 
       {/* Header */}
@@ -198,12 +197,16 @@ export function Layout({ children }: LayoutProps) {
                   <a href="tel:+254711371092" className="hover:text-white transition-colors">+254 711 371092</a>
                 </li>
                 <li className="flex items-start gap-2">
+                  <Phone size={16} className="mt-0.5 text-accent flex-shrink-0" />
+                  <a href="tel:+254712612764" className="hover:text-white transition-colors">+254 712 612 764 (Emergency)</a>
+                </li>
+                <li className="flex items-start gap-2">
                   <Mail size={16} className="mt-0.5 text-secondary flex-shrink-0" />
-                  <a href="mailto:info@bioteldna.co.ke" className="hover:text-white transition-colors">info@bioteldna.co.ke</a>
+                  <a href="mailto:dna@bioteldna.co.ke" className="hover:text-white transition-colors">dna@bioteldna.co.ke</a>
                 </li>
                 <li className="flex items-start gap-2">
                   <Clock size={16} className="mt-0.5 text-secondary flex-shrink-0" />
-                  <span>Mon - Sat: 8:00 AM - 6:00 PM</span>
+                  <span>24 Hours Service (Mon - Sun)</span>
                 </li>
               </ul>
               <div className="mt-4">

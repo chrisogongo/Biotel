@@ -67,11 +67,18 @@ export function ContactPage() {
                       <p className="text-sm">+254 711 371092</p>
                     </div>
                   </a>
-                  <a href="mailto:info@bioteldna.co.ke" className="flex items-start gap-3 text-gray-700 hover:text-primary transition-colors">
+                  <a href="tel:+254712612764" className="flex items-start gap-3 text-gray-700 hover:text-primary transition-colors">
+                    <Phone size={20} className="text-accent mt-0.5 flex-shrink-0" />
+                    <div>
+                      <p className="font-medium">Emergency Phone</p>
+                      <p className="text-sm">+254 712 612 764</p>
+                    </div>
+                  </a>
+                  <a href="mailto:dna@bioteldna.co.ke" className="flex items-start gap-3 text-gray-700 hover:text-primary transition-colors">
                     <Mail size={20} className="text-primary mt-0.5 flex-shrink-0" />
                     <div>
                       <p className="font-medium">Email</p>
-                      <p className="text-sm">info@bioteldna.co.ke</p>
+                      <p className="text-sm">dna@bioteldna.co.ke</p>
                     </div>
                   </a>
                   <div className="flex items-start gap-3 text-gray-700">
@@ -86,7 +93,7 @@ export function ContactPage() {
                     <Clock size={20} className="text-primary mt-0.5 flex-shrink-0" />
                     <div>
                       <p className="font-medium">Business Hours</p>
-                      <p className="text-sm">Monday - Saturday: 8:00 AM - 6:00 PM</p>
+                      <p className="text-sm">24 Hours Service (Monday - Sunday)</p>
                     </div>
                   </div>
                 </div>

@@ -220,7 +220,7 @@ export const knowledgeBase: KnowledgeEntry[] = [
     category: 'escalation',
     keywords: ['contact', 'phone', 'call', 'whatsapp', 'reach', 'talk', 'speak'],
     question: 'How do I contact Biotel DNA?',
-    answer: 'You can reach Biotel DNA through:\n\n**WhatsApp:** +254 711 371092\n💬 Quick responses, convenient for enquiries\n\n**Phone:** +254 711 371092\n📞 Speak directly with our team\n\n**Email:** info@bioteldna.co.ke\n📧 For detailed enquiries\n\n**Online:** Use our contact form on the website\n📝 Request a quotation or ask questions\n\n**Business Hours:**\nMonday - Saturday: 8:00 AM - 6:00 PM\n\nWe recommend WhatsApp for the fastest response. Our team is ready to help with your DNA testing needs.',
+    answer: 'You can reach Biotel DNA through:\n\n**WhatsApp:** +254 711 371092\n💬 Quick responses, convenient for enquiries\n\n**Phone:** +254 711 371092\n📞 Speak directly with our team\n\n**Emergency Phone:** +254 712 612 764\n🚨 For urgent enquiries\n\n**Email:** dna@bioteldna.co.ke\n📧 For detailed enquiries\n\n**Online:** Use our contact form on the website\n📝 Request a quotation or ask questions\n\n**Business Hours:**\n24 Hours Service (Monday - Sunday)\n\nWe recommend WhatsApp for the fastest response. Our team is ready to help with your DNA testing needs.',
     followUp: []
   }
 ];
