@@ -67,13 +67,6 @@ export function ContactPage() {
                       <p className="text-sm">+254 711 371092</p>
                     </div>
                   </a>
-                  <a href="tel:+254712612764" className="flex items-start gap-3 text-gray-700 hover:text-primary transition-colors">
-                    <Phone size={20} className="text-accent mt-0.5 flex-shrink-0" />
-                    <div>
-                      <p className="font-medium">Emergency Phone</p>
-                      <p className="text-sm">+254 712 612 764</p>
-                    </div>
-                  </a>
                   <a href="mailto:dna@bioteldna.co.ke" className="flex items-start gap-3 text-gray-700 hover:text-primary transition-colors">
                     <Mail size={20} className="text-primary mt-0.5 flex-shrink-0" />
                     <div>

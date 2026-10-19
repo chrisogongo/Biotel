@@ -193,10 +193,6 @@ export function Layout({ children }: LayoutProps) {
                   <a href="tel:+254711371092" className="hover:text-white transition-colors">+254 711 371092</a>
                 </li>
                 <li className="flex items-start gap-2">
-                  <Phone size={16} className="mt-0.5 text-accent flex-shrink-0" />
-                  <a href="tel:+254712612764" className="hover:text-white transition-colors">+254 712 612 764 (Emergency)</a>
-                </li>
-                <li className="flex items-start gap-2">
                   <Mail size={16} className="mt-0.5 text-secondary flex-shrink-0" />
                   <a href="mailto:dna@bioteldna.co.ke" className="hover:text-white transition-colors">dna@bioteldna.co.ke</a>
                 </li>
