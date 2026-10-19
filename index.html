@@ -1,97 +1,122 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>coder-app-name</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-    <style>
-      /* 内联样式确保主题色立即生效，避免闪烁 */
-      html,
-      body {
-        margin: 0;
-        padding: 0;
-        width: 100%;
-        height: 100%;
-      }
-      html.light,
-      html.light body {
-        background-color: #ffffff !important;
-        color: #000000;
-      }
-      html.dark,
-      html.dark body {
-        background-color: #1a1a1a !important;
-        color: #ffffff;
-      }
-    </style>
-    <script>
-      // 在 React 加载前立即设置主题，避免闪烁
-      (function () {
-        const isInIframe = window.self !== window.top;
-
-        function applyThemeToDOM(theme) {
-          document.documentElement.classList.remove("light", "dark");
-          document.documentElement.classList.add(theme);
-          document.documentElement.setAttribute("data-theme", theme);
-        }
-
-        if (isInIframe) {
-          // 监听父窗口主动推送的主题消息
-          window.addEventListener("message", function (event) {
-            if (event.data && typeof event.data.theme === "string") {
-              const theme = event.data.theme;
-              if (theme === "light" || theme === "dark") {
-                applyThemeToDOM(theme);
-              }
-            }
-          });
-        } else {
-          // 非 iframe 环境，使用默认 light 主题
-          applyThemeToDOM("light");
-        }
-      })();
+    <title>Biotel DNA Kenya | DNA Testing Services in Kenya | Paternity DNA Test Nairobi</title>
+    <meta name="description" content="Biotel DNA offers professional DNA testing services in Kenya including paternity tests, siblingship tests, and relationship DNA testing. Affordable, confidential DNA tests in Nairobi, Mombasa and Kisumu." />
+    <meta name="keywords" content="DNA test Kenya, DNA testing services in Kenya, paternity DNA test Nairobi, DNA test price in Kenya, affordable DNA test Kenya, DNA testing centre Nairobi" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://bioteldna.co.ke/" />
+    <meta property="og:title" content="Biotel DNA Kenya | Professional DNA Testing Services" />
+    <meta property="og:description" content="Trusted DNA testing services in Kenya. Paternity, siblingship, grandparent and relationship DNA tests. Confidential, affordable, professional." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://bioteldna.co.ke/" />
+    <meta property="og:locale" content="en_KE" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Biotel DNA Kenya | DNA Testing Services" />
+    <meta name="twitter:description" content="Professional DNA testing services in Kenya. Paternity, relationship and legal DNA tests." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧬</text></svg>" />
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Biotel DNA",
+      "url": "https://bioteldna.co.ke",
+      "telephone": "+254711371092",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Nairobi",
+        "addressCountry": "KE"
+      },
+      "description": "Professional DNA testing services in Kenya including paternity, siblingship, grandparent and relationship DNA testing."
+    }
     </script>
-      <script>
-      (function () {
-        if (window.self === window.top) return;
-        var reported = {};
-        window.addEventListener("error", function (event) {
-          // 资源加载失败的 error 事件没有 message，此处仅上报 JS 运行时错误
-          if (!event || !event.message) return;
-          var key =
-            event.message + "|" + (event.filename || "") + "|" + (event.lineno || 0);
-          if (reported[key]) return; // 相同错误只上报一次，避免渲染循环刷屏
-          reported[key] = true;
-          try {
-            window.parent.postMessage(
-              {
-                type: "sandbox-runtime-error",
-                payload: {
-                  message: String(event.message).slice(0, 500),
-                  filename: event.filename || "",
-                  lineno: event.lineno || 0,
-                  colno: event.colno || 0,
-                  stack:
-                    event.error && event.error.stack
-                      ? String(event.error.stack).slice(0, 2000)
-                      : ""
-                }
-              },
-              "*"
-            );
-          } catch (e) {
-            /* 上报失败不影响页面运行 */
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How does a DNA paternity test work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A DNA paternity test compares the genetic markers of a child with those of the alleged father. Since a child inherits half of their DNA from each parent, the test can determine with a very high degree of accuracy whether the tested man is the biological father. Sample collection is simple — usually a buccal (cheek) swab — and the process is painless and non-invasive."
           }
-        });
-      })();
+        },
+        {
+          "@type": "Question",
+          "name": "How much does a DNA test cost in Kenya?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The cost of a DNA test in Kenya depends on the type of test, the number of participants, and whether you need a private (peace of mind) test or a legal test with chain-of-custody procedures. Contact Biotel DNA for current pricing and a personalised quotation based on your specific needs."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does it take to get DNA test results?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Turnaround times vary depending on the type of test and current laboratory workload. Generally, results are available within a few working days after samples are received at the laboratory. Contact us for current estimated turnaround times for your specific test."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is DNA testing confidential?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Biotel DNA takes confidentiality very seriously. All test information, results, and personal details are handled with strict privacy protocols. Results are shared only with authorised individuals and are never disclosed to third parties without consent."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between a private and a legal DNA test?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A private DNA test (also called a peace of mind test) is for personal knowledge only and does not follow formal identification procedures. A legal DNA test follows strict chain-of-custody procedures, with formal identification of all participants and authorised sample collection, making the results suitable for court or official purposes."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can a DNA test be done without the mother's participation?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. A paternity DNA test can be conducted with just the child and the alleged father. However, including the mother's sample can strengthen the accuracy and conclusiveness of the results. If the mother is unavailable, the test can still provide reliable results."
+          }
+        }
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Biotel DNA",
+      "image": "",
+      "telephone": "+254711371092",
+      "email": "info@bioteldna.co.ke",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Nairobi",
+        "addressCountry": "KE"
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        "opens": "08:00",
+        "closes": "18:00"
+      },
+      "priceRange": "$$",
+      "description": "Professional DNA testing services in Kenya. Paternity, siblingship, grandparent, maternity, and legal DNA testing."
+    }
     </script>
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

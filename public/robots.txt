@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bioteldna.co.ke/sitemap.xml

@@ -1,1 +1,83 @@
 @import "tailwindcss";
+
+@theme {
+  --color-primary: #0e4d92;
+  --color-primary-dark: #0a3a6e;
+  --color-primary-light: #1a6bc4;
+  --color-secondary: #00a86b;
+  --color-secondary-dark: #008a57;
+  --color-accent: #f59e0b;
+  --color-dark: #1a1a2e;
+  --color-light: #f8fafc;
+  --color-gray-50: #f9fafb;
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-300: #d1d5db;
+  --color-gray-400: #9ca3af;
+  --color-gray-500: #6b7280;
+  --color-gray-600: #4b5563;
+  --color-gray-700: #374151;
+  --color-gray-800: #1f2937;
+  --color-gray-900: #111827;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-display: 'Playfair Display', serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-gray-800);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.gradient-hero {
+  background: linear-gradient(135deg, #0e4d92 0%, #0a3a6e 50%, #072a50 100%);
+}
+
+.gradient-secondary {
+  background: linear-gradient(135deg, #00a86b 0%, #008a57 100%);
+}
+
+.gradient-accent {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #0e4d92, #00a86b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(14, 77, 146, 0.12);
+}
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 1000;
+  animation: pulse-green 2s infinite;
+}
+
+@keyframes pulse-green {
+  0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
+  70% { box-shadow: 0 0 0 12px rgba(37, 211, 102, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+.dna-pattern {
+  background-image: radial-gradient(circle at 20% 50%, rgba(14, 77, 146, 0.05) 0%, transparent 50%),
+                    radial-gradient(circle at 80% 50%, rgba(0, 168, 107, 0.05) 0%, transparent 50%);
+}
