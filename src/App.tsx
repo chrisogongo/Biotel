@@ -4,6 +4,7 @@ import { Layout } from './components/Layout';
 import { Home } from './pages/Home';
 import { ServicesPage } from './pages/ServicesPage';
 import { ServiceDetail } from './pages/ServiceDetail';
+import { PaternityTestPage } from './pages/PaternityTestPage';
 import { AboutPage } from './pages/AboutPage';
 import { ContactPage } from './pages/ContactPage';
 import { LocationsPage } from './pages/LocationsPage';
@@ -27,6 +28,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/services" element={<ServicesPage />} />
+          <Route path="/services/paternity-dna-test" element={<PaternityTestPage />} />
           <Route path="/services/:slug" element={<ServiceDetail />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
