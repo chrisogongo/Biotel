@@ -20,19 +20,130 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧬</text></svg>" />
+    <!-- Organization Schema -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Organization",
+      "@id": "https://bioteldna.co.ke/#organization",
       "name": "Biotel DNA",
+      "alternateName": "Biotel DNA Kenya",
       "url": "https://bioteldna.co.ke",
+      "logo": "https://bioteldna.co.ke/logo.png",
+      "description": "Professional DNA testing services in Kenya including paternity, siblingship, grandparent, maternity, and legal DNA testing. Based in Nairobi, serving clients across Kenya.",
       "telephone": "+254711371092",
+      "email": "info@bioteldna.co.ke",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Nairobi",
+        "addressRegion": "Nairobi County",
         "addressCountry": "KE"
       },
-      "description": "Professional DNA testing services in Kenya including paternity, siblingship, grandparent and relationship DNA testing."
+      "areaServed": {
+        "@type": "Country",
+        "name": "Kenya"
+      },
+      "sameAs": []
+    }
+    </script>
+    
+    <!-- LocalBusiness Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "@id": "https://bioteldna.co.ke/#localbusiness",
+      "name": "Biotel DNA",
+      "image": "",
+      "url": "https://bioteldna.co.ke",
+      "telephone": "+254711371092",
+      "email": "info@bioteldna.co.ke",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "",
+        "addressLocality": "Nairobi",
+        "addressRegion": "Nairobi County",
+        "addressCountry": "KE"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -1.286389,
+        "longitude": 36.817223
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday"
+        ],
+        "opens": "08:00",
+        "closes": "18:00"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Nairobi"
+        },
+        {
+          "@type": "City",
+          "name": "Mombasa"
+        },
+        {
+          "@type": "City",
+          "name": "Kisumu"
+        }
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "DNA Testing Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "DNA Paternity Testing",
+              "description": "Professional paternity DNA testing services in Kenya"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Siblingship DNA Testing",
+              "description": "DNA testing to establish sibling relationships"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Grandparent DNA Testing",
+              "description": "DNA testing to establish grandparent-grandchild relationships"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Legal DNA Testing",
+              "description": "Court-admissible DNA testing with chain-of-custody procedures"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Immigration DNA Testing",
+              "description": "DNA testing for immigration and visa applications"
+            }
+          }
+        ]
+      }
     }
     </script>
     <script type="application/ld+json">
