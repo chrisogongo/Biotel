@@ -38,13 +38,11 @@ export function Layout({ children }: LayoutProps) {
           <div className="flex justify-between items-center h-16 md:h-20">
             {/* Logo */}
             <Link to="/" className="flex items-center gap-2">
-              <div className="w-10 h-10 md:w-12 md:h-12 bg-primary rounded-full flex items-center justify-center">
-                <span className="text-white font-bold text-lg md:text-xl">🧬</span>
-              </div>
-              <div>
-                <h1 className="text-primary font-bold text-lg md:text-xl leading-tight">Biotel DNA</h1>
-                <p className="text-gray-500 text-xs hidden sm:block">DNA Testing Services Kenya</p>
-              </div>
+              <img 
+                src="https://bioteldna.co.ke/wp-content/uploads/2026/09/bioteldna-logo.png" 
+                alt="Biotel DNA - Professional DNA Testing Services in Kenya" 
+                className="h-10 md:h-12 w-auto"
+              />
             </Link>
 
             {/* Desktop Navigation */}
@@ -146,14 +144,12 @@ export function Layout({ children }: LayoutProps) {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* Company Info */}
             <div>
-              <div className="flex items-center gap-2 mb-4">
-                <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
-                  <span className="text-white font-bold text-lg">🧬</span>
-                </div>
-                <div>
-                  <h3 className="font-bold text-lg">Biotel DNA</h3>
-                  <p className="text-gray-400 text-xs">DNA Testing Services Kenya</p>
-                </div>
+              <div className="mb-4">
+                <img 
+                  src="https://bioteldna.co.ke/wp-content/uploads/2026/09/bioteldna-logo.png" 
+                  alt="Biotel DNA - Professional DNA Testing Services in Kenya" 
+                  className="h-12 w-auto brightness-0 invert"
+                />
               </div>
               <p className="text-gray-400 text-sm leading-relaxed">
                 Professional DNA testing services in Kenya. We provide paternity, relationship, and legal DNA testing with confidentiality, accuracy, and care.
