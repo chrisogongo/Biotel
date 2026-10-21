@@ -189,7 +189,7 @@ npm run deploy       # Deploy to GitHub Pages (if configured)
 
 ### Contact Information (Verified)
 - 📞 Phone: +254 711 371092
-- 🚨 Emergency: +254 712 612 764
+
 - 💬 WhatsApp: +254 711 371092
 - 📧 Email: dna@bioteldna.co.ke
 - 🕐 Hours: 24 Hours (Mon-Sun)
