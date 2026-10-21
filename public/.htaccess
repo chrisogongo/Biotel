@@ -2,6 +2,51 @@
 # Place this file in your public_html directory
 
 # ============================================
+# FIX MIME TYPES (CRITICAL - Fixes blank screen)
+# ============================================
+<IfModule mod_mime.c>
+  # JavaScript
+  AddType application/javascript js mjs
+  AddType text/javascript js
+  
+  # CSS
+  AddType text/css css
+  
+  # JSON
+  AddType application/json json
+  
+  # WebAssembly
+  AddType application/wasm wasm
+  
+  # Fonts
+  AddType font/woff woff
+  AddType font/woff2 woff2
+  AddType font/ttf ttf
+  AddType font/otf otf
+  AddType application/vnd.ms-fontobject eot
+  
+  # Images
+  AddType image/svg+xml svg svgz
+  AddType image/webp webp
+  AddType image/avif avif
+  
+  # HTML
+  AddType text/html html htm
+</IfModule>
+
+# Force correct charset for JS and CSS
+<FilesMatch "\.(js|css)$">
+  <IfModule mod_headers.c>
+    Header set Content-Type "application/javascript" env=JS_FILE
+    Header set Content-Type "text/css" env=CSS_FILE
+  </IfModule>
+</FilesMatch>
+
+# Explicit charset for JavaScript modules
+AddDefaultCharset UTF-8
+AddCharset UTF-8 .js .css .html .htm .json
+
+# ============================================
 # FORCE HTTPS (Uncomment if you have SSL)
 # ============================================
 # <IfModule mod_rewrite.c>
@@ -88,20 +133,45 @@ Options -Indexes
 ErrorDocument 404 /index.html
 
 # ============================================
-# CORS HEADERS (if needed for external resources)
+# CORS HEADERS (Allow cross-origin for assets)
 # ============================================
 <IfModule mod_headers.c>
+  # Allow cross-origin for fonts
   <FilesMatch "\.(ttf|otf|eot|woff|woff2)$">
     Header set Access-Control-Allow-Origin "*"
+  </FilesMatch>
+  
+  # Allow cross-origin for JS and CSS (fixes module loading)
+  <FilesMatch "\.(js|css|mjs)$">
+    Header set Access-Control-Allow-Origin "*"
+    Header set Timing-Allow-Origin "*"
   </FilesMatch>
 </IfModule>
 
 # ============================================
-# PROTECT SENSITIVE FILES
+# ALLOW ASSETS FOLDER ACCESS
 # ============================================
-<FilesMatch "^\.">
-  Order allow,deny
-  Deny from all
+<Directory "assets">
+  <IfModule mod_authz_core.c>
+    Require all granted
+  </IfModule>
+  <IfModule !mod_authz_core.c>
+    Order allow,deny
+    Allow from all
+  </IfModule>
+</Directory>
+
+# ============================================
+# PROTECT SENSITIVE FILES (but allow .htaccess)
+# ============================================
+<FilesMatch "^\.(htpasswd|git|env|log)$">
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+  <IfModule !mod_authz_core.c>
+    Order allow,deny
+    Deny from all
+  </IfModule>
 </FilesMatch>
 
 # ============================================
