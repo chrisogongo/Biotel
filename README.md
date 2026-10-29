@@ -336,7 +336,7 @@ Contributions are welcome! Please follow these steps:
 
 **Biotel DNA Kenya**
 - **Phone**: +254 711 371092
-- **Emergency**: +254 712 612 764
+
 - **WhatsApp**: +254 711 371092
 - **Email**: dna@bioteldna.co.ke
 - **Hours**: 24 Hours (Monday - Sunday)

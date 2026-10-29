@@ -1,0 +1,201 @@
+# Biotel DNA Website - Apache Configuration for cPanel
+# Place this file in your public_html directory
+
+# ============================================
+# FIX MIME TYPES (CRITICAL - Fixes blank screen)
+# ============================================
+<IfModule mod_mime.c>
+  # JavaScript
+  AddType application/javascript js mjs
+  AddType text/javascript js
+  
+  # CSS
+  AddType text/css css
+  
+  # JSON
+  AddType application/json json
+  
+  # WebAssembly
+  AddType application/wasm wasm
+  
+  # Fonts
+  AddType font/woff woff
+  AddType font/woff2 woff2
+  AddType font/ttf ttf
+  AddType font/otf otf
+  AddType application/vnd.ms-fontobject eot
+  
+  # Images
+  AddType image/svg+xml svg svgz
+  AddType image/webp webp
+  AddType image/avif avif
+  
+  # HTML
+  AddType text/html html htm
+</IfModule>
+
+# Force correct charset for JS and CSS
+<FilesMatch "\.(js|css)$">
+  <IfModule mod_headers.c>
+    Header set Content-Type "application/javascript" env=JS_FILE
+    Header set Content-Type "text/css" env=CSS_FILE
+  </IfModule>
+</FilesMatch>
+
+# Explicit charset for JavaScript modules
+AddDefaultCharset UTF-8
+AddCharset UTF-8 .js .css .html .htm .json
+
+# ============================================
+# FORCE HTTPS (Uncomment if you have SSL)
+# ============================================
+# <IfModule mod_rewrite.c>
+#   RewriteEngine On
+#   RewriteCond %{HTTPS} off
+#   RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+# </IfModule>
+
+# ============================================
+# ENABLE GZIP COMPRESSION
+# ============================================
+<IfModule mod_deflate.c>
+  # Compress HTML, CSS, JavaScript, JSON, SVG
+  AddOutputFilterByType DEFLATE text/html
+  AddOutputFilterByType DEFLATE text/css
+  AddOutputFilterByType DEFLATE text/javascript
+  AddOutputFilterByType DEFLATE application/javascript
+  AddOutputFilterByType DEFLATE application/json
+  AddOutputFilterByType DEFLATE application/xml
+  AddOutputFilterByType DEFLATE image/svg+xml
+  AddOutputFilterByType DEFLATE font/woff
+  AddOutputFilterByType DEFLATE font/woff2
+</IfModule>
+
+# ============================================
+# BROWSER CACHING
+# ============================================
+<IfModule mod_expires.c>
+  ExpiresActive On
+  
+  # HTML - short cache
+  ExpiresByType text/html "access plus 1 hour"
+  
+  # CSS and JavaScript - long cache (hashed filenames)
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  
+  # Images - very long cache
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/gif "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/x-icon "access plus 1 year"
+  
+  # Fonts - long cache
+  ExpiresByType font/woff "access plus 1 year"
+  ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType application/font-woff "access plus 1 year"
+  ExpiresByType application/font-woff2 "access plus 1 year"
+</IfModule>
+
+# ============================================
+# SECURITY HEADERS
+# ============================================
+<IfModule mod_headers.c>
+  # Prevent clickjacking
+  Header set X-Frame-Options "SAMEORIGIN"
+  
+  # Prevent MIME type sniffing
+  Header set X-Content-Type-Options "nosniff"
+  
+  # Enable XSS protection
+  Header set X-XSS-Protection "1; mode=block"
+  
+  # Referrer policy
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+  
+  # Remove server signature
+  Header unset Server
+  Header unset X-Powered-By
+</IfModule>
+
+# ============================================
+# PREVENT DIRECTORY BROWSING
+# ============================================
+Options -Indexes
+
+# ============================================
+# CUSTOM ERROR PAGES
+# ============================================
+# For SPA (Single Page Application) with hash routing
+# This ensures all routes go to index.html
+ErrorDocument 404 /index.html
+
+# ============================================
+# CORS HEADERS (Allow cross-origin for assets)
+# ============================================
+<IfModule mod_headers.c>
+  # Allow cross-origin for fonts
+  <FilesMatch "\.(ttf|otf|eot|woff|woff2)$">
+    Header set Access-Control-Allow-Origin "*"
+  </FilesMatch>
+  
+  # Allow cross-origin for JS and CSS (fixes module loading)
+  <FilesMatch "\.(js|css|mjs)$">
+    Header set Access-Control-Allow-Origin "*"
+    Header set Timing-Allow-Origin "*"
+  </FilesMatch>
+</IfModule>
+
+# ============================================
+# ALLOW ASSETS FOLDER ACCESS
+# ============================================
+<Directory "assets">
+  <IfModule mod_authz_core.c>
+    Require all granted
+  </IfModule>
+  <IfModule !mod_authz_core.c>
+    Order allow,deny
+    Allow from all
+  </IfModule>
+</Directory>
+
+# ============================================
+# PROTECT SENSITIVE FILES (but allow .htaccess)
+# ============================================
+<FilesMatch "^\.(htpasswd|git|env|log)$">
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+  <IfModule !mod_authz_core.c>
+    Order allow,deny
+    Deny from all
+  </IfModule>
+</FilesMatch>
+
+# ============================================
+# CACHE CONTROL FOR ASSETS
+# ============================================
+<IfModule mod_headers.c>
+  <FilesMatch "\.(js|css)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  
+  <FilesMatch "\.(jpg|jpeg|png|gif|svg|webp|ico)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+</IfModule>
+
+# ============================================
+# REWRITE RULES FOR SPA
+# ============================================
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  
+  # If the requested file or directory doesn't exist, serve index.html
+  # This is important for React Router (though we use HashRouter)
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /index.html [L]
+</IfModule>
