@@ -14,7 +14,7 @@ const removeCrossoriginPlugin = () => {
 };
 
 export default defineConfig({
-  plugins: [react(), tailwindcss(), removeCrossoriginPlugin()],
+  plugins: [react(), tailwindcss()],
   base: './',
   server: {
     host: "0.0.0.0",
